@@ -6,6 +6,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
+/**
+ * Активность с заголовком и текстом заметки
+ * */
 class MainActivity : AppCompatActivity(), NoteView {
 
     private var presenter: Presenter? = null
@@ -25,9 +28,10 @@ class MainActivity : AppCompatActivity(), NoteView {
 
     private fun initViews() {
 
-        findViewById<EditText>(R.id.headerView).also { headerView = it }
-        findViewById<EditText>(R.id.contentView).also { contentView = it }
-        findViewById<Button>(R.id.Button_Save).also { saveButton = it }
+        headerView = findViewById(R.id.headerView)
+        contentView = findViewById(R.id.contentView)
+        saveButton = findViewById(R.id.Button_Save)
+
         saveButton.setOnClickListener {
 
             presenter?.tryToSaveNote(

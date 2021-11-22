@@ -1,9 +1,22 @@
 package ru.example.notes
 
+/**
+ * Класс Presenter для [NoteView], реализует логику сохранения
+ * в модель заголовка и текста заметки
+ *
+ * @property view View к которой получаем доступ через интерфейс
+ */
 class Presenter(private val view: NoteView?) {
 
     private val model = Model()
 
+    /**
+     * Функция проверяет корректность введенных данных
+     * и сохраняет заголовок и текст заметки
+     *
+     * @param header - заголовок заметки
+     * @param content - текст заметки
+     * */
     fun tryToSaveNote(header: String, content: String) {
 
         if (header.isEmpty()) {

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="8dp">
+
+    <EditText
+        android:id="@+id/headerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="top"
+        android:hint="@string/EditHeaderText"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:paddingTop="20dp"
+        android:textColorHint="#757575">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/contentView"
+        android:layout_width="392dp"
+        android:layout_height="344dp"
+        android:layout_below="@+id/headerView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:autofillHints="name"
+        android:hint="@string/EditContentText"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:gravity="top"
+        android:textColorHint="#757575">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/Button_Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contentView"
+        android:layout_marginTop="16dp"
+        android:layout_centerInParent="true"
+        android:text="@string/ButtonSaveText">
+
+    </Button>
+
+
+</RelativeLayout>

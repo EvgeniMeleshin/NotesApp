@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">Заметка</string>
+    <string name="app_name">Заметки</string>
     <string name="ButtonSaveText">Сохранить</string>
+    <string name="ButtonAboutText">О приложении</string>
+    <string name="ViewAboutTitle">О приложении</string>
+    <string name="ButtonShareText">Поделиться</string>
+    <string name="AboutText">Приложение "Заметки". Стажировка BSC. Мелешин Евгений</string>
     <string name="EditHeaderText">Введите заголовок</string>
     <string name="EditContentText">Введите текст заметки</string>
     <string name="toastSaveFiled">Ошибка сохранения</string>

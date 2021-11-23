@@ -8,7 +8,7 @@ import android.widget.Toast
 
 /**
  * Активность с заголовком и текстом заметки
- * */
+ */
 class MainActivity : AppCompatActivity(), NoteView {
 
     private var presenter: Presenter? = null
@@ -42,24 +42,8 @@ class MainActivity : AppCompatActivity(), NoteView {
         }
     }
 
-    override fun showMessageIfHeaderIsEmpty() {
-        showToast(getString(R.string.toastHeaderIsEmpty))
-    }
-
-    override fun showMessageIfContentIsEmpty() {
-        showToast(getString(R.string.toastContentIsEmpty))
-    }
-
-    override fun showMessageSuccess() {
-        showToast(getString(R.string.toastSaveSuccess))
-    }
-
-    override fun showMessageFailed() {
-        showToast(getString(R.string.toastSaveFiled))
-    }
-
-    private fun showToast(text: String){
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+    override fun showToast(typeMessage: String) {
+        Toast.makeText(this, typeMessage, Toast.LENGTH_SHORT).show()
     }
 
     override fun clearFields() {

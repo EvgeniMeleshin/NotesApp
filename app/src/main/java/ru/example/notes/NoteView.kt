@@ -15,9 +15,4 @@ interface NoteView {
      */
     fun clearFields()
 
-    /**
-     * Функция отправляет заголовок и текст заметки во внешнее приложение
-     */
-    fun shareNote(header: String, content: String)
-
 }

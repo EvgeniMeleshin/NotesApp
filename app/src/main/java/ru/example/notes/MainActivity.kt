@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity(), NoteView {
         contentView.text.clear()
     }
 
-    override fun shareNote(header: String, content: String) {
+    private fun shareNote(header: String, content: String) {
 
         if(header.isEmpty()){
             showToast(TypesMessages.TOAST_HEADER_IS_EMPTY.message)

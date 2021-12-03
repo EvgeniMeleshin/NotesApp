@@ -15,4 +15,9 @@ interface NoteView {
      */
     fun clearFields()
 
+    /**
+     * Функция обновляет список в RecyclerView
+     */
+    fun updateRecyclerView(listModels: MutableList<Model>)
 }
+

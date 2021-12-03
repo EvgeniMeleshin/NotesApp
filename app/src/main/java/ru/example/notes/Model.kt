@@ -1,5 +1,7 @@
 package ru.example.notes
 
+
+
 /**
  * Модель данных заметки
  */
@@ -7,6 +9,13 @@ class Model {
 
     private var header: String = ""
     private var content: String = ""
+    private var date: String = ""
+    private var listModels: MutableList<Model> = ArrayList<Model>()
+
+    fun getList(): MutableList<Model>{
+        return listModels
+    }
+
 
     /**
      * Функция записывает текст заметки в поле модели
@@ -38,6 +47,22 @@ class Model {
      */
     fun getHeader(): String {
         return header
+    }
+
+    /**
+     * Функция записывает дату заметки в поле модели
+     *
+     * @param date - дата заметки
+     */
+    fun addDate(date: String) {
+        this.date = date
+    }
+
+    /**
+     * Функция возвращает дату заметки из поля модели
+     */
+    fun getDate(): String {
+        return date
     }
 
 }

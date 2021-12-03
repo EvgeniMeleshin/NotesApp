@@ -1,11 +1,16 @@
 package ru.example.notes
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * Активность с заголовком и текстом заметки
@@ -24,11 +29,23 @@ class MainActivity : AppCompatActivity(), NoteView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        removeFragmentInfoNote()
+        fillListOfNotes()
         initViews()
         presenter =  Presenter(this)
 
     }
 
+    private fun fillListOfNotes(){
+
+        val defaultListOfNotes = mutableListOf<Model>()
+
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerViewListOfNotes)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = AdapterListOfNotes(defaultListOfNotes)
+    }
+
+    @SuppressLint("SimpleDateFormat")
     private fun initViews() {
 
         headerView = findViewById(R.id.headerView)
@@ -37,11 +54,14 @@ class MainActivity : AppCompatActivity(), NoteView {
         aboutButton = findViewById(R.id.Button_About)
         shareButton = findViewById(R.id.Button_Share)
 
+        val newDateFormat = SimpleDateFormat("dd.M.yyyy hh:mm:ss")
+
         saveButton.setOnClickListener {
 
             presenter?.tryToSaveNote(
                 headerView.text.toString(),
-                contentView.text.toString()
+                contentView.text.toString(),
+                newDateFormat.format(Date())
             )
 
         }
@@ -86,4 +106,22 @@ class MainActivity : AppCompatActivity(), NoteView {
             putExtra(Intent.EXTRA_TEXT, "$header$delimiter\n$content")
         })
     }
+
+    private fun removeFragmentInfoNote(){
+
+        val fragmentInfoNote: FragmentInfoNote =
+            supportFragmentManager.findFragmentById(R.id.fragmentInfoNote) as FragmentInfoNote
+
+        this.supportFragmentManager
+        .beginTransaction()
+        .remove(fragmentInfoNote)
+        .commit()
+
+    }
+
+    override fun updateRecyclerView(listModels: MutableList<Model>) {
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerViewListOfNotes)
+        recyclerView.adapter = AdapterListOfNotes(listModels)
+    }
 }
+

@@ -17,8 +17,9 @@ class Presenter(private val view: NoteView?) {
      *
      * @param header - заголовок заметки
      * @param content - текст заметки
+     * @param date - дата заметки
      */
-    fun tryToSaveNote(header: String, content: String) {
+    fun tryToSaveNote(header: String, content: String, date: String) {
 
         if (header.isEmpty()) {
             view?.showToast(TypesMessages.TOAST_HEADER_IS_EMPTY.message)
@@ -30,20 +31,21 @@ class Presenter(private val view: NoteView?) {
             return
         }
 
-        saveNote(header, content)
+        saveNote(header, content, date)
+        view?.showToast(TypesMessages.TOAST_SAVE_SUCCESS.message)
+        view?.clearFields()
+        view?.updateRecyclerView(model.getList())
 
-        if (model.getHeader().isNotEmpty() && model.getContent().isNotEmpty()) {
-            view?.showToast(TypesMessages.TOAST_SAVE_SUCCESS.message)
-            view?.clearFields()
-        } else if (model.getHeader().isEmpty()) {
-            view?.showToast(TypesMessages.TOAST_HEADER_IS_EMPTY.message)
-        } else if (model.getContent().isEmpty()) {
-            view?.showToast(TypesMessages.TOAST_CONTENT_IS_EMPTY.message)
-        }
     }
 
-    private fun saveNote(header: String, content: String) {
-        model.addHeader(header)
-        model.addContent(content)
+    private fun saveNote(header: String, content: String, date: String) {
+
+        val newModel = Model()
+
+        newModel.addHeader(header)
+        newModel.addContent(content)
+        newModel.addDate(date)
+
+        model.getList().add(newModel)
     }
 }

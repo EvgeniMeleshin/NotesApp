@@ -1,5 +1,6 @@
 package ru.example.notes
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity(), NoteView {
     private lateinit var headerView: EditText
     private lateinit var contentView: EditText
     private lateinit var saveButton: Button
+    private lateinit var aboutButton: Button
+    private lateinit var shareButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +34,8 @@ class MainActivity : AppCompatActivity(), NoteView {
         headerView = findViewById(R.id.headerView)
         contentView = findViewById(R.id.contentView)
         saveButton = findViewById(R.id.Button_Save)
+        aboutButton = findViewById(R.id.Button_About)
+        shareButton = findViewById(R.id.Button_Share)
 
         saveButton.setOnClickListener {
 
@@ -39,6 +44,18 @@ class MainActivity : AppCompatActivity(), NoteView {
                 contentView.text.toString()
             )
 
+        }
+
+        aboutButton.setOnClickListener{
+            val intent = Intent(this, AboutActivity::class.java)
+            startActivity(intent)
+        }
+
+        shareButton.setOnClickListener{
+            shareNote(
+                headerView.text.toString(),
+                contentView.text.toString()
+            )
         }
     }
 
@@ -51,4 +68,22 @@ class MainActivity : AppCompatActivity(), NoteView {
         contentView.text.clear()
     }
 
+    private fun shareNote(header: String, content: String) {
+
+        if(header.isEmpty()){
+            showToast(TypesMessages.TOAST_HEADER_IS_EMPTY.message)
+            return
+        }
+
+        if(content.isEmpty()){
+            showToast(TypesMessages.TOAST_CONTENT_IS_EMPTY.message)
+            return
+        }
+
+        startActivity(Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            val delimiter = ":"
+            putExtra(Intent.EXTRA_TEXT, "$header$delimiter\n$content")
+        })
+    }
 }

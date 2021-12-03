@@ -9,12 +9,6 @@ package ru.example.notes
  */
 class Presenter(private val view: NoteView?) {
 
-    private enum class TypesMessage(val message: String) {
-        TOAST_SAVE_SUCCESS("Заметка сохранена"),
-        TOAST_HEADER_IS_EMPTY("Заголовок не заполнен"),
-        TOAST_CONTENT_IS_EMPTY("Текст заметки не заполнен")
-    }
-
     private val model = Model()
 
     /**
@@ -27,24 +21,24 @@ class Presenter(private val view: NoteView?) {
     fun tryToSaveNote(header: String, content: String) {
 
         if (header.isEmpty()) {
-            view?.showToast(TypesMessage.TOAST_HEADER_IS_EMPTY.message)
+            view?.showToast(TypesMessages.TOAST_HEADER_IS_EMPTY.message)
             return
         }
 
         if (content.isEmpty()) {
-            view?.showToast(TypesMessage.TOAST_CONTENT_IS_EMPTY.message)
+            view?.showToast(TypesMessages.TOAST_CONTENT_IS_EMPTY.message)
             return
         }
 
         saveNote(header, content)
 
         if (model.getHeader().isNotEmpty() && model.getContent().isNotEmpty()) {
-            view?.showToast(TypesMessage.TOAST_SAVE_SUCCESS.message)
+            view?.showToast(TypesMessages.TOAST_SAVE_SUCCESS.message)
             view?.clearFields()
         } else if (model.getHeader().isEmpty()) {
-            view?.showToast(TypesMessage.TOAST_HEADER_IS_EMPTY.message)
+            view?.showToast(TypesMessages.TOAST_HEADER_IS_EMPTY.message)
         } else if (model.getContent().isEmpty()) {
-            view?.showToast(TypesMessage.TOAST_CONTENT_IS_EMPTY.message)
+            view?.showToast(TypesMessages.TOAST_CONTENT_IS_EMPTY.message)
         }
     }
 

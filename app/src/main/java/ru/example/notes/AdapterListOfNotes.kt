@@ -26,16 +26,15 @@ class AdapterListOfNotes(private val headers: List<Model>) :
         init {
             headerTextView = itemView.findViewById(R.id.headerTextView)
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView =
+
+        return MyViewHolder(
             LayoutInflater.from(parent.context).inflate(
                 R.layout.item_list_of_notes, parent, false
             )
-
-        return MyViewHolder(itemView)
+        )
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -45,7 +44,6 @@ class AdapterListOfNotes(private val headers: List<Model>) :
     }
 
     override fun getItemCount() = headers.size
-
 
     private fun bind(holder: MyViewHolder, position: Int) {
 

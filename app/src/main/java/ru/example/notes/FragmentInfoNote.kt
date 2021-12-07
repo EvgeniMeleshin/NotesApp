@@ -7,10 +7,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
-private const val ARG_HEADER = "header"
-private const val ARG_CONTENT = "content"
-private const val ARG_DATE = "date"
-
 class FragmentInfoNote: Fragment() {
 
     private lateinit var elHeader: TextView
@@ -50,7 +46,9 @@ class FragmentInfoNote: Fragment() {
 
     companion object {
 
-        private const val TAG = "FragmentInfoNote"
+        private const val ARG_HEADER = "header"
+        private const val ARG_CONTENT = "content"
+        private const val ARG_DATE = "date"
 
         @JvmStatic
         fun newInstance(header: String, content: String, date: String) =

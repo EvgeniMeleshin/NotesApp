@@ -6,9 +6,19 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import android.widget.TextView
 
+/**
+ * Адаптер для [RecyclerView]
+ *
+ * @property headers Лист объектов Model
+ */
 class AdapterListOfNotes(private val headers: List<Model>):
     RecyclerView.Adapter<AdapterListOfNotes.MyViewHolder>() {
 
+    /**
+     * Класс элемента списка [RecyclerView]
+     *
+     * @property View элемент списка
+     */
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
         var headerTextView: TextView? = null
@@ -33,24 +43,40 @@ class AdapterListOfNotes(private val headers: List<Model>):
 
         holder.itemView.setOnClickListener {
 
-            val fragmentInfoNote
-                = FragmentInfoNote.newInstance(
+            val activity: MainActivity = holder.itemView.context as MainActivity
+
+            val fragmentAlsoAdded =
+                activity.supportFragmentManager.popBackStackImmediate("FragmentListOfNotes", 1)
+
+            if (!fragmentAlsoAdded) {
+
+                val fragmentInfoNote = FragmentInfoNote.newInstance(
                     headers[position].getHeader(),
                     headers[position].getContent(),
-                    headers[position].getDate())
+                    headers[position].getDate()
+                )
 
-            val activity: MainActivity = holder.itemView.context as MainActivity
-            activity.supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.fragmentListOfNotes, fragmentInfoNote)
-                .addToBackStack("FragmentListOfNotes")
-                .commit()
+                activity.supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragmentListOfNotes, fragmentInfoNote)
+                    .addToBackStack("FragmentListOfNotes")
+                    .commit()
+            }
 
         }
+
     }
 
     override fun getItemCount(): Int {
         return headers.size
     }
 
+    /**fun getTopFragment(): Fragment? {
+        supportFragmentManager.run {
+            return when (backStackEntryCount) {
+                0 -> null
+                else -> findFragmentByTag(getBackStackEntryAt(backStackEntryCount - 1).name)
+            }
+        }
+    }*/
 }

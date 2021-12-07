@@ -28,8 +28,7 @@ class MainActivity : AppCompatActivity(), NoteView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        removeFragmentInfoNote()
+        hideFragmentInfoNote()
         fillListOfNotes()
         initViews()
         presenter =  Presenter(this)
@@ -107,15 +106,15 @@ class MainActivity : AppCompatActivity(), NoteView {
         })
     }
 
-    private fun removeFragmentInfoNote(){
+    private fun hideFragmentInfoNote(){
 
         val fragmentInfoNote: FragmentInfoNote =
             supportFragmentManager.findFragmentById(R.id.fragmentInfoNote) as FragmentInfoNote
 
         this.supportFragmentManager
-        .beginTransaction()
-        .remove(fragmentInfoNote)
-        .commit()
+            .beginTransaction()
+            .hide(fragmentInfoNote)
+            .commit()
 
     }
 

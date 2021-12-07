@@ -1,7 +1,6 @@
 package ru.example.notes
 
 
-
 /**
  * Модель данных заметки
  */
@@ -12,7 +11,7 @@ class Model {
     private var date: String = ""
     private var listModels: MutableList<Model> = ArrayList<Model>()
 
-    fun getList(): MutableList<Model>{
+    fun getList(): MutableList<Model> {
         return listModels
     }
 

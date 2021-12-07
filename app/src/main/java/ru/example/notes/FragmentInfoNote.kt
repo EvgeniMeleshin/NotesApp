@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
-class FragmentInfoNote: Fragment() {
+class FragmentInfoNote : Fragment() {
 
     private lateinit var elHeader: TextView
     private lateinit var elContent: TextView

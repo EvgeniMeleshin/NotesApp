@@ -11,7 +11,7 @@ import android.widget.TextView
  *
  * @property headers Лист объектов Model
  */
-class AdapterListOfNotes(private val headers: List<Model>):
+class AdapterListOfNotes(private val headers: List<Model>) :
     RecyclerView.Adapter<AdapterListOfNotes.MyViewHolder>() {
 
     /**
@@ -19,7 +19,7 @@ class AdapterListOfNotes(private val headers: List<Model>):
      *
      * @property View элемент списка
      */
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var headerTextView: TextView? = null
 
@@ -32,15 +32,24 @@ class AdapterListOfNotes(private val headers: List<Model>):
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView =
             LayoutInflater.from(parent.context).inflate(
-                        R.layout.item_list_of_notes, parent, false)
+                R.layout.item_list_of_notes, parent, false
+            )
 
         return MyViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
-        holder.headerTextView?.text = headers[position].getHeader()
+        bind(holder, position)
 
+    }
+
+    override fun getItemCount() = headers.size
+
+
+    private fun bind(holder: MyViewHolder, position: Int) {
+
+        holder.headerTextView?.text = headers[position].getHeader()
         holder.itemView.setOnClickListener {
 
             val activity: MainActivity = holder.itemView.context as MainActivity
@@ -62,21 +71,6 @@ class AdapterListOfNotes(private val headers: List<Model>):
                     .addToBackStack("FragmentListOfNotes")
                     .commit()
             }
-
         }
-
     }
-
-    override fun getItemCount(): Int {
-        return headers.size
-    }
-
-    /**fun getTopFragment(): Fragment? {
-        supportFragmentManager.run {
-            return when (backStackEntryCount) {
-                0 -> null
-                else -> findFragmentByTag(getBackStackEntryAt(backStackEntryCount - 1).name)
-            }
-        }
-    }*/
 }

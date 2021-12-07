@@ -31,11 +31,11 @@ class MainActivity : AppCompatActivity(), NoteView {
         hideFragmentInfoNote()
         fillListOfNotes()
         initViews()
-        presenter =  Presenter(this)
+        presenter = Presenter(this)
 
     }
 
-    private fun fillListOfNotes(){
+    private fun fillListOfNotes() {
 
         val defaultListOfNotes = mutableListOf<Model>()
 
@@ -65,12 +65,12 @@ class MainActivity : AppCompatActivity(), NoteView {
 
         }
 
-        aboutButton.setOnClickListener{
+        aboutButton.setOnClickListener {
             val intent = Intent(this, AboutActivity::class.java)
             startActivity(intent)
         }
 
-        shareButton.setOnClickListener{
+        shareButton.setOnClickListener {
             shareNote(
                 headerView.text.toString(),
                 contentView.text.toString()
@@ -89,12 +89,12 @@ class MainActivity : AppCompatActivity(), NoteView {
 
     private fun shareNote(header: String, content: String) {
 
-        if(header.isEmpty()){
+        if (header.isEmpty()) {
             showToast(TypesMessages.TOAST_HEADER_IS_EMPTY.message)
             return
         }
 
-        if(content.isEmpty()){
+        if (content.isEmpty()) {
             showToast(TypesMessages.TOAST_CONTENT_IS_EMPTY.message)
             return
         }
@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity(), NoteView {
         })
     }
 
-    private fun hideFragmentInfoNote(){
+    private fun hideFragmentInfoNote() {
 
         val fragmentInfoNote: FragmentInfoNote =
             supportFragmentManager.findFragmentById(R.id.fragmentInfoNote) as FragmentInfoNote

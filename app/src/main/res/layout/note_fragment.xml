@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/edit_text_style"
-    tools:context=".FragmentInfoNote">
+    tools:context=".NoteFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/infoNoteContent"
+            android:id="@+id/content"
             android:layout_width="301dp"
             android:layout_height="403dp"
             android:layout_marginStart="104dp"
@@ -24,7 +24,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -34,7 +33,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -44,7 +42,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -54,7 +51,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/infoNoteHeader"
+            android:id="@+id/header"
             android:layout_width="303dp"
             android:layout_height="30dp"
             android:layout_marginStart="104dp"
@@ -65,7 +62,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/infoNoteDate"
+            android:id="@+id/date"
             android:layout_width="302dp"
             android:layout_height="30dp"
             android:layout_marginStart="104dp"

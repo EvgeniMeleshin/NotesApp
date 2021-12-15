@@ -19,5 +19,10 @@ interface NoteView {
      * Функция обновляет список в RecyclerView
      */
     fun updateRecyclerView(listModels: MutableList<Model>)
+
+    /**
+     * Функция позволяет поделиться заметкой
+     */
+    fun share(header: String, content: String)
 }
 

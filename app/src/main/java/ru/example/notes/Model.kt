@@ -4,17 +4,14 @@ package ru.example.notes
 /**
  * Модель данных заметки
  */
-class Model {
+class Model : ModelInterface {
 
     private var header: String = ""
     private var content: String = ""
     private var date: String = ""
     private var listModels: MutableList<Model> = ArrayList<Model>()
 
-    fun getList(): MutableList<Model> {
-        return listModels
-    }
-
+    fun getList() = listModels
 
     /**
      * Функция записывает текст заметки в поле модели
@@ -28,9 +25,8 @@ class Model {
     /**
      * Функция возвращает значение текста заметки из поля модели
      */
-    fun getContent(): String {
-        return content
-    }
+    fun getContent() = content
+
 
     /**
      * Функция записывает текст заголовка заметки в поле модели
@@ -44,9 +40,8 @@ class Model {
     /**
      * Функция возвращает значение заголовка заметки из поля модели
      */
-    fun getHeader(): String {
-        return header
-    }
+    fun getHeader() = header
+
 
     /**
      * Функция записывает дату заметки в поле модели
@@ -60,8 +55,6 @@ class Model {
     /**
      * Функция возвращает дату заметки из поля модели
      */
-    fun getDate(): String {
-        return date
-    }
+    fun getDate() = date
 
 }

@@ -22,4 +22,5 @@
     <string name="infoNoteLabelContent">Заметка:</string>
     <string name="labelListNotes">Список заметок</string>
     <string name="text_fragmentInfoNote">Детали заметки</string>
+    <string name="headerViewPagerActivity">Заметки</string>
 </resources>

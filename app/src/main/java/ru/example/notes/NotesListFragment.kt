@@ -58,18 +58,16 @@ class NotesListFragment : Fragment(), NoteView {
         }
         binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
         binding.recyclerView.adapter = NotesListAdapter(defaultListOfNotes, object : ItemClickListener{
-            override fun onClicked(fragment: NoteFragment) {
-                val fragmentAlsoAdded =
-                    activity?.supportFragmentManager?.popBackStackImmediate("FragmentListOfNotes", 1)
-                if (!fragmentAlsoAdded!!) {
-                    activity?.supportFragmentManager
-                        ?.beginTransaction()
-                        ?.replace(R.id.notesListFragment, fragment)
-                        ?.addToBackStack("FragmentListOfNotes")
-                        ?.commit()
-                }
+            override fun onClicked(headers: List<Model>, position: Int) {
+                replaceFragment(headers, position)
             }
         })
+    }
+
+    override fun afterSaveNote(message: String, listModels: MutableList<Model>) {
+        showToast(message)
+        clearFields()
+        updateRecyclerView(listModels)
     }
 
     override fun showToast(typeMessage: String) {
@@ -91,17 +89,26 @@ class NotesListFragment : Fragment(), NoteView {
 
     override fun updateRecyclerView(listModels: MutableList<Model>) {
         binding.recyclerView.adapter = NotesListAdapter(listModels, object : ItemClickListener{
-            override fun onClicked(fragment: NoteFragment) {
-                val fragmentAlsoAdded =
-                    activity?.supportFragmentManager?.popBackStackImmediate("FragmentListOfNotes", 1)
-                if (!fragmentAlsoAdded!!) {
-                    activity?.supportFragmentManager
-                            ?.beginTransaction()
-                            ?.replace(R.id.notesListFragment, fragment)
-                            ?.addToBackStack("FragmentListOfNotes")
-                            ?.commit()
-                }
+            override fun onClicked(headers: List<Model>, position: Int) {
+                replaceFragment(headers, position)
             }
         })
     }
+
+    private fun replaceFragment(headers: List<Model>, position: Int){
+        val fragmentAlsoAdded =
+            activity?.supportFragmentManager?.popBackStackImmediate("FragmentListOfNotes", 1)
+        if (!fragmentAlsoAdded!!) {
+            val fragment = NoteFragment.newInstance(
+                headers[position].getHeader(),
+                headers[position].getContent(),
+                headers[position].getDate())
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+                ?.replace(R.id.notesListFragment, fragment)
+                ?.addToBackStack("FragmentListOfNotes")
+                ?.commit()
+        }
+    }
+
 }

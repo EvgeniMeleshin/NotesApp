@@ -23,13 +23,8 @@ class NotesListAdapter(private val headers: List<Model>, private val onClickList
         val headerTextView: TextView = itemView.findViewById(R.id.headerTextView)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        return MyViewHolder(
-            LayoutInflater.from(parent.context).inflate(
-                R.layout.item_list_of_notes, parent, false
-            )
-        )
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MyViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.item_list_of_notes, parent, false))
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         bind(holder, position)
@@ -40,12 +35,7 @@ class NotesListAdapter(private val headers: List<Model>, private val onClickList
     private fun bind(holder: MyViewHolder, position: Int) {
         holder.headerTextView.text = headers[position].getHeader()
         holder.itemView.setOnClickListener {
-            val fragmentInfoNote = NoteFragment.newInstance(
-                    headers[position].getHeader(),
-                    headers[position].getContent(),
-                    headers[position].getDate()
-                )
-            onClickListener.onClicked(fragmentInfoNote)
+            onClickListener.onClicked(headers, position)
         }
     }
 }

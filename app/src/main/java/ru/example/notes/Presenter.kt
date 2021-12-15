@@ -29,9 +29,7 @@ class Presenter(private val view: NoteView?) {
             return
         }
         saveNote(header, content, date)
-        view?.showToast(TypesMessages.TOAST_SAVE_SUCCESS.message)
-        view?.clearFields()
-        view?.updateRecyclerView(model.getList())
+        view?.afterSaveNote(TypesMessages.TOAST_SAVE_SUCCESS.message, model.getList())
     }
 
     private fun saveNote(header: String, content: String, date: String) {

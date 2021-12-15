@@ -24,5 +24,10 @@ interface NoteView {
      * Функция позволяет поделиться заметкой
      */
     fun share(header: String, content: String)
+
+    /**
+     * Выполняется после успешного сохранения заметки
+     */
+    fun afterSaveNote(message: String, listModels: MutableList<Model>)
 }
 

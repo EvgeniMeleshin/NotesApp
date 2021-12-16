@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/edit_text_style"
     tools:context=".NoteFragment">
 
 
@@ -14,64 +13,48 @@
 
         <TextView
             android:id="@+id/content"
-            android:layout_width="301dp"
-            android:layout_height="403dp"
-            android:layout_marginStart="104dp"
-            android:layout_marginTop="88dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layiout_height_650dp"
+            android:layout_marginTop="@dimen/margin_top_12dp"
+            android:background="@drawable/edit_text_style"
+            android:paddingStart="@dimen/padding_10dp"
+            android:paddingEnd="@dimen/padding_10dp"
             android:text="@string/res_infoNoteContent"
-            android:textSize="20sp"
+            android:textSize="@dimen/text_size_20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:text="@string/infoNoteLabelHeader"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="52dp"
-            android:text="@string/infoNoteLabelDate"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="92dp"
-            android:text="@string/infoNoteLabelContent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/date" />
 
         <TextView
             android:id="@+id/header"
-            android:layout_width="303dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="104dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_30dp"
+            android:layout_marginTop="@dimen/margin_top_4dp"
+            android:background="@drawable/edit_text_style"
+            android:paddingStart="@dimen/padding_10dp"
+            android:paddingEnd="@dimen/padding_10dp"
             android:text="@string/res_infoNoteHeader"
-            android:textSize="20sp"
+            android:textSize="@dimen/text_size_20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/date"
-            android:layout_width="302dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="104dp"
-            android:layout_marginTop="44dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_30dp"
+            android:layout_marginTop="@dimen/margin_top_40dp"
+            android:background="@drawable/edit_text_style"
+            android:paddingStart="@dimen/padding_10dp"
+            android:paddingEnd="@dimen/padding_10dp"
             android:text="@string/res_infoNoteDate"
-            android:textSize="20sp"
+            android:textSize="@dimen/text_size_20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

@@ -16,9 +16,9 @@ interface NoteView {
     fun clearFields()
 
     /**
-     * Функция обновляет список в RecyclerView
+     * Функция обновляет список заметок
      */
-    fun updateRecyclerView(listModels: MutableList<Model>)
+    fun updateNotesList(listNotes: MutableList<Note>)
 
     /**
      * Функция позволяет поделиться заметкой
@@ -28,6 +28,6 @@ interface NoteView {
     /**
      * Выполняется после успешного сохранения заметки
      */
-    fun afterSaveNote(message: String, listModels: MutableList<Model>)
+    fun afterSaveNote(message: String, listNotes: MutableList<Note>)
 }
 

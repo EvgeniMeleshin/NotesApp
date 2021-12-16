@@ -8,6 +8,6 @@ interface ItemClickListener {
     /**
      * Событие по клику элемента списка
      */
-    fun onClicked(headers: List<Model>, position: Int)
+    fun onClicked(headers: List<Note>, position: Int)
 
 }

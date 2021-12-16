@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Notes">
         <activity
+            android:name=".NotesPagerActivity"
+            android:label="@string/headerViewPagerActivity"
+            android:exported="false" />
+        <activity
             android:name=".AboutActivity"
             android:label="@string/ViewAboutTitle"
             android:exported="false" />

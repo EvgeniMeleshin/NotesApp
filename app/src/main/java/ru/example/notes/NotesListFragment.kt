@@ -8,19 +8,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import ru.example.notes.databinding.NotesListFragmentBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
 /**
- * Класс фрагмента
+ * Класс фрагмента со списком заметок
  */
 class NotesListFragment : Fragment(), NoteView {
 
     private lateinit var binding: NotesListFragmentBinding
     private var presenter: Presenter? = null
-    private val defaultListOfNotes = mutableListOf<Model>()
+    private val defaultListOfNotes = Model().getList()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -56,18 +55,17 @@ class NotesListFragment : Fragment(), NoteView {
                 binding.contentView.text.toString()
             )
         }
-        binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
         binding.recyclerView.adapter = NotesListAdapter(defaultListOfNotes, object : ItemClickListener{
-            override fun onClicked(headers: List<Model>, position: Int) {
+            override fun onClicked(headers: List<Note>, position: Int) {
                 replaceFragment(headers, position)
             }
         })
     }
 
-    override fun afterSaveNote(message: String, listModels: MutableList<Model>) {
+    override fun afterSaveNote(message: String, listNotes: MutableList<Note>) {
         showToast(message)
         clearFields()
-        updateRecyclerView(listModels)
+        updateNotesList(listNotes)
     }
 
     override fun showToast(typeMessage: String) {
@@ -87,15 +85,15 @@ class NotesListFragment : Fragment(), NoteView {
         })
     }
 
-    override fun updateRecyclerView(listModels: MutableList<Model>) {
-        binding.recyclerView.adapter = NotesListAdapter(listModels, object : ItemClickListener{
-            override fun onClicked(headers: List<Model>, position: Int) {
+    override fun updateNotesList(listNotes: MutableList<Note>) {
+        binding.recyclerView.adapter = NotesListAdapter(listNotes, object : ItemClickListener{
+            override fun onClicked(headers: List<Note>, position: Int) {
                 replaceFragment(headers, position)
             }
         })
     }
 
-    private fun replaceFragment(headers: List<Model>, position: Int){
+    private fun replaceFragment(headers: List<Note>, position: Int){
         val fragmentAlsoAdded =
             activity?.supportFragmentManager?.popBackStackImmediate("FragmentListOfNotes", 1)
         if (!fragmentAlsoAdded!!) {
@@ -110,5 +108,4 @@ class NotesListFragment : Fragment(), NoteView {
                 ?.commit()
         }
     }
-
 }

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".NotesListFragment">
 
     <LinearLayout
@@ -13,50 +14,49 @@
         <EditText
             android:id="@+id/headerView"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="match_parent"
             android:background="@drawable/edit_text_style"
             android:hint="@string/EditHeaderText"
-            android:paddingStart="10dp"
-            android:paddingTop="8dp"
-            android:paddingEnd="10dp"
+            android:paddingStart="@dimen/padding_10dp"
+            android:paddingTop="@dimen/padding_8dp"
+            android:paddingEnd="@dimen/padding_10dp"
             android:inputType = ""/>
 
         <EditText
             android:id="@+id/contentView"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:layout_marginTop = "8dp"
+            android:layout_height="@dimen/height_150dp"
+            android:paddingStart="@dimen/padding_10dp"
+            android:paddingEnd="@dimen/padding_10dp"
+            android:layout_marginTop = "@dimen/margin_8dp"
             android:background="@drawable/edit_text_style"
             android:gravity="top"
             android:hint="@string/EditContentText"
-            android:textColorHint="#757575"
+            android:textColorHint="@color/color_hint"
             android:inputType="" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop = "8dp"
-            android:textSize="16sp"
+            android:layout_marginTop = "@dimen/margin_8dp"
+            android:textSize="@dimen/text_size_16sp"
             android:text = "@string/labelListNotes"/>
-
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:paddingTop="8dp"
-            android:background="@drawable/edit_text_style"/>
+            android:layout_height="@dimen/height450"
+            android:paddingTop="@dimen/padding_8dp"
+            android:background="@drawable/edit_text_style"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
+            android:paddingStart="@dimen/padding_8dp"
+            android:paddingEnd="@dimen/padding_8dp"
+            android:paddingLeft="@dimen/padding16"
+            android:paddingRight="@dimen/padding16"
             android:orientation="horizontal"
             android:gravity="center"
             style="?android:attr/buttonBarButtonStyle">
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/ButtonAboutText"
-                android:textSize="10sp" />
+                android:textSize="@dimen/textsize10"/>
 
             <Space
                 android:layout_width="0dp"
@@ -78,11 +78,11 @@
             <Button
                 android:id="@+id/shareButton"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="@dimen/height50"
                 android:gravity="center"
                 android:layout_weight="1"
                 android:text="@string/ButtonShareText"
-                android:textSize="10sp" />
+                android:textSize="@dimen/textsize10" />
 
             <Space
                 android:layout_width="0dp"
@@ -97,7 +97,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
                 android:text="@string/ButtonSaveText"
-                android:textSize="10sp"/>
+                android:textSize="@dimen/textsize10"
+                tools:ignore="SmallSp" />
 
         </LinearLayout>
 

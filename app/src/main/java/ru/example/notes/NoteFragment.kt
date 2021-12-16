@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import ru.example.notes.databinding.NoteFragmentBinding
 
 /**
- * Класс фрагмента
+ * Класс фрагмента данных заметки
  */
 class NoteFragment : Fragment() {
 
@@ -35,11 +36,10 @@ class NoteFragment : Fragment() {
         @JvmStatic
         fun newInstance(header: String, content: String, date: String) =
             NoteFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_HEADER, header)
-                    putString(ARG_CONTENT, content)
-                    putString(ARG_DATE, date)
-                }
+                arguments = bundleOf(
+                    ARG_HEADER to header,
+                    ARG_CONTENT to content,
+                    ARG_DATE to date)
             }
     }
 }

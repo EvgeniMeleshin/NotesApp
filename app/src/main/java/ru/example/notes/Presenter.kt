@@ -33,11 +33,11 @@ class Presenter(private val view: NoteView?) {
     }
 
     private fun saveNote(header: String, content: String, date: String) {
-        val newModel = Model()
-        newModel.addHeader(header)
-        newModel.addContent(content)
-        newModel.addDate(date)
-        model.getList().add(newModel)
+        val newNote = Note()
+        newNote.addHeader(header)
+        newNote.addContent(content)
+        newNote.addDate(date)
+        model.getList().add(newNote)
     }
 
     fun tryToShareNote(header: String, content: String){

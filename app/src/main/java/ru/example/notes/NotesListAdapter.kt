@@ -10,6 +10,7 @@ import android.widget.TextView
  * Адаптер для [RecyclerView]
  *
  * @property headers Лист объектов Note
+ * @property onClickListener слушатель нажатия для элемента списка
  */
 class NotesListAdapter(private val headers: List<Note>, private val onClickListener: ItemClickListener) :
     RecyclerView.Adapter<NotesListAdapter.MyViewHolder>() {
@@ -21,6 +22,11 @@ class NotesListAdapter(private val headers: List<Note>, private val onClickListe
      */
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val headerTextView: TextView = itemView.findViewById(R.id.headerTextView)
+
+        /**
+         * Функция вызывает фрагмент NoteFragment с детальной информацией по заметке
+         * @param position номер позиции списка заметок
+         */
         fun bind(position: Int) {
             headerTextView.text = headers[position].getHeader()
             itemView.setOnClickListener {

@@ -4,7 +4,7 @@ package ru.example.notes
 /**
  * Модель данных заметки
  */
-class Model: ModelInterface {
+object Model: ModelInterface {
 
     private var listModels: MutableList<Note> = ArrayList<Note>()
 

@@ -7,6 +7,7 @@ interface NoteView {
 
     /**
      * Функция выводит сообщение с переданным ее тестом
+     * @param typeMessage текст сообщения
      */
     fun showToast(typeMessage: String)
 
@@ -17,16 +18,21 @@ interface NoteView {
 
     /**
      * Функция обновляет список заметок
+     * @param listNotes список заметок
      */
     fun updateNotesList(listNotes: MutableList<Note>)
 
     /**
      * Функция позволяет поделиться заметкой
+     * @param header заголовок заметки
+     * @param content заметка
      */
     fun share(header: String, content: String)
 
     /**
      * Выполняется после успешного сохранения заметки
+     * @param message текст сообщения
+     * @param listNotes список заметок
      */
     fun afterSaveNote(message: String, listNotes: MutableList<Note>)
 }

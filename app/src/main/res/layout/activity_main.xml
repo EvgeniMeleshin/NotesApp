@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="@dimen/padding_8dp"
     android:paddingStart="@dimen/padding_8dp"
     android:paddingEnd="@dimen/padding_8dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/container">
 
-    <fragment
-        android:id="@+id/notesListFragment"
-        android:name = "ru.example.notes.NotesListFragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text = "@string/text_fragmentListOfNotes" />
 
-</LinearLayout>
+
+</FrameLayout>

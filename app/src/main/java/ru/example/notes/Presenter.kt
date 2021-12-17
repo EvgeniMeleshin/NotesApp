@@ -9,12 +9,11 @@ package ru.example.notes
  */
 class Presenter(private val view: NoteView?) {
 
-    private val model = Model()
+    private val model = Model
 
     /**
      * Функция проверяет корректность введенных данных
      * и сохраняет заголовок и текст заметки
-     *
      * @param header заголовок заметки
      * @param content текст заметки
      * @param date дата заметки
@@ -33,13 +32,16 @@ class Presenter(private val view: NoteView?) {
     }
 
     private fun saveNote(header: String, content: String, date: String) {
-        val newNote = Note()
-        newNote.addHeader(header)
-        newNote.addContent(content)
-        newNote.addDate(date)
+        val newNote = Note(header, content, date)
         model.getList().add(newNote)
     }
 
+    /**
+     * Функция проверяет корректность введенных данных
+     * и открывает диалог выбора внешнего приложения
+     * @param header заголовок заметки
+     * @param content текст заметки
+     */
     fun tryToShareNote(header: String, content: String){
         if (header.isEmpty()) {
             view?.showToast(TypesMessages.TOAST_HEADER_IS_EMPTY.message)

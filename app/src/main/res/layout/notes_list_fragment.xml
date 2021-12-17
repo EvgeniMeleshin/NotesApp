@@ -45,7 +45,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/height450"
+            android:layout_height="390dp"
             android:paddingTop="@dimen/padding_8dp"
             android:background="@drawable/edit_text_style"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
@@ -57,17 +57,17 @@
             android:paddingEnd="@dimen/padding_8dp"
             android:paddingLeft="@dimen/padding16"
             android:paddingRight="@dimen/padding16"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:gravity="center"
             style="?android:attr/buttonBarButtonStyle">
 
             <Button
                 android:id="@+id/aboutButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/ButtonAboutText"
-                android:textSize="@dimen/textsize10"/>
+                android:textSize="@dimen/textSize12"/>
 
             <Space
                 android:layout_width="0dp"
@@ -77,12 +77,12 @@
 
             <Button
                 android:id="@+id/shareButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/height50"
                 android:gravity="center"
                 android:layout_weight="1"
                 android:text="@string/ButtonShareText"
-                android:textSize="@dimen/textsize10" />
+                android:textSize="@dimen/textSize12"/>
 
             <Space
                 android:layout_width="0dp"
@@ -92,12 +92,12 @@
 
             <Button
                 android:id="@+id/saveButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
                 android:text="@string/ButtonSaveText"
-                android:textSize="@dimen/textsize10"
+                android:textSize="@dimen/textSize12"
                 tools:ignore="SmallSp" />
 
         </LinearLayout>

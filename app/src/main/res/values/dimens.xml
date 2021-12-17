@@ -16,5 +16,5 @@
     <dimen name="height450">450dp</dimen>
     <dimen name="padding16">16dp</dimen>
     <dimen name="height50">50dp</dimen>
-    <dimen name="textsize10">10sp</dimen>
+    <dimen name="textSize12">12sp</dimen>
 </resources>

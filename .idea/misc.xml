@@ -3,10 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/app/src/main/res/drawable/border_item.xml" value="0.21302083333333333" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/drawable/border_item_style.xml" value="0.21302083333333333" />
         <entry key="..\:/AndroidProjects/app/src/main/res/drawable/edit_text_style.xml" value="0.21302083333333333" />
         <entry key="..\:/AndroidProjects/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21302083333333333" />
         <entry key="..\:/AndroidProjects/app/src/main/res/layout/activity_about.xml" value="0.16" />
-        <entry key="..\:/AndroidProjects/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/layout/activity_main.xml" value="0.19329073482428116" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/layout/border_item.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/layout/fragment_info_note.xml" value="0.22" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/layout/fragment_info_note2.xml" value="0.192481884057971" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/layout/fragment_item_list.xml" value="0.15364583333333334" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/layout/fragment_list_of_notes.xml" value="0.3013698630136986" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/layout/fragment_list_of_notes2.xml" value="0.16770833333333332" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/layout/fragment_note_detales.xml" value="0.2211690363349131" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/layout/item_list_of_notes.xml" value="0.16770833333333332" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/layout/item_of_list.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/layout/note_fragment.xml" value="0.359375" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/layout/note_list_fragment.xml" value="0.25" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/layout/notes_list_fragment.xml" value="0.359375" />
+        <entry key="..\:/AndroidProjects/app/src/main/res/layout/test.xml" value="0.359375" />
       </map>
     </option>
   </component>

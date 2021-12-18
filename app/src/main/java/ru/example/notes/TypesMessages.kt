@@ -1,7 +1,5 @@
 package ru.example.notes
 
-import android.content.Context
-
 /**
  * Класс перечисления вариантов сообщений
  */

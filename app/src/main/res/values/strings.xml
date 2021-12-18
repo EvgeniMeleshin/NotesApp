@@ -11,4 +11,16 @@
     <string name="toastSaveSuccess">Заметка сохранена</string>
     <string name="toastHeaderIsEmpty">Заголовок не заполнен</string>
     <string name="toastContentIsEmpty">Текст заметки не заполнен</string>
+    <string name="text_fragmentListOfNotes">Список заметок</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textItemListOfNotes">Заголовок</string>
+    <string name="res_infoNoteHeader">Заголовок</string>
+    <string name="res_infoNoteDate">Дата</string>
+    <string name="res_infoNoteContent">Заметка</string>
+    <string name="infoNoteLabelHeader">Заголовок:</string>
+    <string name="infoNoteLabelDate">Дата:</string>
+    <string name="infoNoteLabelContent">Заметка:</string>
+    <string name="labelListNotes">Список заметок</string>
+    <string name="text_fragmentInfoNote">Детали заметки</string>
+    <string name="headerViewPagerActivity">Заметки</string>
 </resources>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".NotesListFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/headerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_style"
+            android:hint="@string/EditHeaderText"
+            android:paddingStart="@dimen/padding_10dp"
+            android:paddingTop="@dimen/padding_8dp"
+            android:paddingEnd="@dimen/padding_10dp"
+            android:inputType = ""/>
+
+        <EditText
+            android:id="@+id/contentView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_150dp"
+            android:paddingStart="@dimen/padding_10dp"
+            android:paddingEnd="@dimen/padding_10dp"
+            android:layout_marginTop = "@dimen/margin_8dp"
+            android:background="@drawable/edit_text_style"
+            android:gravity="top"
+            android:hint="@string/EditContentText"
+            android:textColorHint="@color/color_hint"
+            android:inputType="" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop = "@dimen/margin_8dp"
+            android:textSize="@dimen/text_size_16sp"
+            android:text = "@string/labelListNotes"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="390dp"
+            android:paddingTop="@dimen/padding_8dp"
+            android:background="@drawable/edit_text_style"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_8dp"
+            android:paddingEnd="@dimen/padding_8dp"
+            android:paddingLeft="@dimen/padding16"
+            android:paddingRight="@dimen/padding16"
+            android:orientation="vertical"
+            android:gravity="center"
+            style="?android:attr/buttonBarButtonStyle">
+
+            <Button
+                android:id="@+id/aboutButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ButtonAboutText"
+                android:textSize="@dimen/textSize12"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+
+            <Button
+                android:id="@+id/shareButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height50"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="@string/ButtonShareText"
+                android:textSize="@dimen/textSize12"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="@string/ButtonSaveText"
+                android:textSize="@dimen/textSize12"
+                tools:ignore="SmallSp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

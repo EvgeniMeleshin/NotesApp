@@ -1,60 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="8dp"
-    android:paddingStart="8dp"
-    android:paddingEnd="8dp"
-    android:orientation="vertical">
-
-    <EditText
-        android:id="@+id/headerView"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_weight="0"
-        android:paddingTop="8dp"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:background="@drawable/edit_text_style"
-        android:hint="@string/EditHeaderText"/>
-
-    <EditText
-        android:id="@+id/contentView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:layout_marginTop = "8dp"
-        android:background="@drawable/edit_text_style"
-        android:gravity="top"
-        android:hint="@string/EditContentText"
-        android:textColorHint="#757575" />
+    android:paddingTop="@dimen/padding_8dp"
+    android:paddingStart="@dimen/padding_8dp"
+    android:paddingEnd="@dimen/padding_8dp"
+    android:orientation="vertical"
+    android:id="@+id/container">
 
 
-    <Button
-        android:id="@+id/Button_About"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:text="@string/ButtonAboutText" />
 
-    <Button
-        android:id="@+id/Button_Share"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:text="@string/ButtonShareText" />
-
-    <Button
-        android:id="@+id/Button_Save"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:text="@string/ButtonSaveText" />
-
-</LinearLayout>
+</FrameLayout>

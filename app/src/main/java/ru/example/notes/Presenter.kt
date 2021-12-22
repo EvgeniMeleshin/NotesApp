@@ -9,7 +9,7 @@ package ru.example.notes
  */
 class Presenter(private val view: NoteView?) {
 
-    private val model = Model
+    private val model = Model()
 
     /**
      * Функция проверяет корректность введенных данных

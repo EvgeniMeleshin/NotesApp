@@ -19,7 +19,8 @@ class NotesListFragment : Fragment(), NoteView {
 
     private lateinit var binding: NotesListFragmentBinding
     private var presenter: Presenter? = null
-    private val defaultListOfNotes = Model.getList()
+    private val defaultListOfNotes = Model().getList()
+    private var actualListNotes = defaultListOfNotes
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -80,6 +81,7 @@ class NotesListFragment : Fragment(), NoteView {
     }
 
     override fun updateNotesList(listNotes: MutableList<Note>) {
+        actualListNotes = listNotes
         binding.recyclerView.adapter = NotesListAdapter(listNotes, object : ItemClickListener{
             override fun onClicked(headers: List<Note>, position: Int) {
                 replaceFragment(headers, position)
@@ -95,17 +97,8 @@ class NotesListFragment : Fragment(), NoteView {
             item.getDate())
         activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.container, fragment)
+                ?.add(R.id.container, fragment)
                 ?.addToBackStack("NotesListFragment")
                 ?.commit()
-    }
-
-    override fun onStart() {
-        super.onStart()
-        binding.recyclerView.adapter = NotesListAdapter(defaultListOfNotes, object : ItemClickListener{
-            override fun onClicked(headers: List<Note>, position: Int) {
-                replaceFragment(headers, position)
-            }
-        })
     }
 }

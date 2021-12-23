@@ -1,4 +1,6 @@
-package ru.example.notes
+package ru.example.notes.list
+
+import ru.example.notes.note.Note
 
 /**
  * Интерфейс для взаимодействия со View через Presenter

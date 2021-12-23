@@ -1,4 +1,4 @@
-package ru.example.notes
+package ru.example.notes.note
 
 /**
  * Интерфейс для работы с моделью

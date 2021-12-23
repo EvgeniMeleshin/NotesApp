@@ -1,13 +1,9 @@
-package ru.example.notes
+package ru.example.notes.note
 
 /**
  * Класс заметки
  */
-class Note(_header: String, _content: String, _date: String) {
-
-    private var header: String = _header
-    private var content: String = _content
-    private var date: String = _date
+data class Note(private var header: String, private var content: String, private var date: String) {
 
     /**
      * Функция возвращает значение текста заметки из поля модели

@@ -1,10 +1,12 @@
-package ru.example.notes
+package ru.example.notes.list
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import ru.example.notes.R
+import ru.example.notes.note.Note
 
 /**
  * Адаптер для [RecyclerView]

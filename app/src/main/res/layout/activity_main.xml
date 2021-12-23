@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="@dimen/padding_8dp"
-    android:paddingStart="@dimen/padding_8dp"
-    android:paddingEnd="@dimen/padding_8dp"
-    android:orientation="vertical"
-    android:id="@+id/container">
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/second_bg"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/padding_8dp"
+        android:paddingTop="@dimen/padding_8dp"
+        android:paddingEnd="@dimen/padding_8dp">
+
+    </FrameLayout>
+
+</ScrollView>
 
 
-
-</FrameLayout>

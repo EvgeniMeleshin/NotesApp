@@ -1,107 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".NotesListFragment">
+    android:layout_height="wrap_content">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:background="@color/second_bg"
+        tools:context=".list.NotesListFragment">
 
-        <EditText
-            android:id="@+id/headerView"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/edit_text_style"
-            android:hint="@string/EditHeaderText"
-            android:paddingStart="@dimen/padding_10dp"
-            android:paddingTop="@dimen/padding_8dp"
-            android:paddingEnd="@dimen/padding_10dp"
-            android:inputType = ""/>
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/main_bg"
+            app:title="@string/toolbar_title"
+            app:titleTextColor="@color/white">
 
-        <EditText
-            android:id="@+id/contentView"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/height_150dp"
-            android:paddingStart="@dimen/padding_10dp"
-            android:paddingEnd="@dimen/padding_10dp"
-            android:layout_marginTop = "@dimen/margin_8dp"
-            android:background="@drawable/edit_text_style"
-            android:gravity="top"
-            android:hint="@string/EditContentText"
-            android:textColorHint="@color/color_hint"
-            android:inputType="" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                tools:visibility="visible">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop = "@dimen/margin_8dp"
-            android:textSize="@dimen/text_size_16sp"
-            android:text = "@string/labelListNotes"/>
+                <ImageButton
+                    android:id="@+id/saveButton"
+                    android:layout_width="57dp"
+                    android:layout_height="52dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="false"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/save"
+                    android:contentDescription="@string/imageButtonDescription"
+                    android:minWidth="48dp"
+                    android:minHeight="32dp"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SpeakableTextPresentCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="390dp"
-            android:paddingTop="@dimen/padding_8dp"
-            android:background="@drawable/edit_text_style"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/aboutButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/info"
+                    android:contentDescription="@string/imageButtonDescription"
+                    android:minWidth="48dp"
+                    android:minHeight="32dp"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.565"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,DuplicateClickableBoundsCheck">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/shareButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/share"
+                    android:contentDescription="@string/imageButtonDescription"
+                    android:minWidth="48dp"
+                    android:minHeight="32dp"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.953"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="SpeakableTextPresentCheck">
+
+                </ImageButton>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="@dimen/padding_8dp"
-            android:paddingEnd="@dimen/padding_8dp"
-            android:paddingLeft="@dimen/padding16"
-            android:paddingRight="@dimen/padding16"
             android:orientation="vertical"
-            android:gravity="center"
-            style="?android:attr/buttonBarButtonStyle">
+            android:paddingTop="60dp">
 
-            <Button
-                android:id="@+id/aboutButton"
+            <EditText
+                android:id="@+id/headerView"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/edit_text_style"
+                android:hint="@string/EditHeaderText"
+                android:inputType=""
+                android:paddingStart="@dimen/padding_10dp"
+                android:paddingTop="@dimen/padding_8dp"
+                android:paddingEnd="@dimen/padding_10dp"
+                android:textColorHint="@color/hint"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/contentView"
+                android:layout_width="match_parent"
+                android:layout_height="218dp"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:background="@drawable/edit_text_style"
+                android:gravity="top"
+                android:hint="@string/EditContentText"
+                android:inputType=""
+                android:paddingStart="@dimen/padding_10dp"
+                android:paddingEnd="@dimen/padding_10dp"
+                android:textColorHint="@color/hint" />
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/ButtonAboutText"
-                android:textSize="@dimen/textSize12"/>
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:text="@string/labelListNotes"
+                android:textSize="@dimen/text_size_16sp"
+                tools:ignore="TextContrastCheck" />
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1" >
-            </Space>
-
-            <Button
-                android:id="@+id/shareButton"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/height50"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:text="@string/ButtonShareText"
-                android:textSize="@dimen/textSize12"/>
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1" >
-            </Space>
-
-            <Button
-                android:id="@+id/saveButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
-                android:text="@string/ButtonSaveText"
-                android:textSize="@dimen/textSize12"
-                tools:ignore="SmallSp" />
+                android:layout_height="@dimen/height450"
+                android:background="@drawable/edit_text_style"
+                android:paddingTop="@dimen/padding_8dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
         </LinearLayout>
 
-    </LinearLayout>
+    </FrameLayout>
 
-</FrameLayout>
+</ScrollView>

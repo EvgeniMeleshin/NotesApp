@@ -23,4 +23,6 @@
     <string name="labelListNotes">Список заметок</string>
     <string name="text_fragmentInfoNote">Детали заметки</string>
     <string name="headerViewPagerActivity">Заметки</string>
+    <string name="toolbar_title">Заметки</string>
+    <string name="imageButtonDescription">Кнопка</string>
 </resources>

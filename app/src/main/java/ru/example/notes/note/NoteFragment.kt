@@ -1,4 +1,4 @@
-package ru.example.notes
+package ru.example.notes.note
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -30,9 +30,14 @@ class NoteFragment : Fragment() {
     }
 
     companion object {
+
         private const val ARG_HEADER = "header"
         private const val ARG_CONTENT = "content"
         private const val ARG_DATE = "date"
+
+        /**
+         * Создает новую инстанцию фрагмента заметки
+         */
         @JvmStatic
         fun newInstance(header: String, content: String, date: String) =
             NoteFragment().apply {

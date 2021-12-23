@@ -12,9 +12,12 @@
         android:paddingStart="@dimen/padding_10dp"
         android:paddingEnd="@dimen/padding_10dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/textItemListOfNotes"
-        android:background="@android:drawable/list_selector_background"
-        />
+        android:text="@string/textItemListOfNotes"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"/>
 
 
 </LinearLayout>

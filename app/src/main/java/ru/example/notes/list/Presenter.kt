@@ -1,4 +1,8 @@
-package ru.example.notes
+package ru.example.notes.list
+
+import ru.example.notes.TypesMessages
+import ru.example.notes.note.Model
+import ru.example.notes.note.Note
 
 
 /**

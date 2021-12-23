@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:clickable="true"
     android:focusable="true"
-    tools:context=".NoteFragment">
+    android:background="@color/second_bg"
+    tools:context=".note.NoteFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,7 +17,7 @@
         <TextView
             android:id="@+id/content"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/layiout_height_650dp"
+            android:layout_height="710dp"
             android:layout_marginTop="@dimen/margin_top_12dp"
             android:background="@drawable/edit_text_style"
             android:paddingStart="@dimen/padding_10dp"

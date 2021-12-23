@@ -1,4 +1,4 @@
-package ru.example.notes
+package ru.example.notes.list
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -8,7 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import ru.example.notes.AboutActivity
+import ru.example.notes.R
 import ru.example.notes.databinding.NotesListFragmentBinding
+import ru.example.notes.note.Model
+import ru.example.notes.note.Note
+import ru.example.notes.note.NoteFragment
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -84,12 +89,12 @@ class NotesListFragment : Fragment(), NoteView {
         actualListNotes = listNotes
         binding.recyclerView.adapter = NotesListAdapter(listNotes, object : ItemClickListener{
             override fun onClicked(headers: List<Note>, position: Int) {
-                replaceFragment(headers, position)
+                addFragment(headers, position)
             }
         })
     }
 
-    private fun replaceFragment(headers: List<Note>, position: Int){
+    private fun addFragment(headers: List<Note>, position: Int){
         val item = headers[position]
         val fragment = NoteFragment.newInstance(
             item.getHeader(),

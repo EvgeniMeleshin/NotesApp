@@ -1,7 +1,8 @@
 package ru.example.notes
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import ru.example.notes.list.NotesListFragment
 
 /**
  * Активность с заголовком и текстом заметки
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
             .beginTransaction()
             .replace(R.id.container, NotesListFragment())
             .commit()
+
     }
 }
 
